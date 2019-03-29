@@ -1,5 +1,9 @@
+安装
+首先下载安装所有依赖
+### `yarn ` 或者 `npm install`
 ### `npm install redux --save`
 
+下面的是介绍一下命令安装
 安装 redux
 
 ### `npm install redux-thunk --S`

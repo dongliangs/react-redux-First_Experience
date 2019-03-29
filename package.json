@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
     "@svgr/webpack": "4.1.0",
     "antd-mobile": "^2.2.11",
     "babel-core": "7.0.0-bridge.0",
@@ -132,7 +133,8 @@
           "style": "css"
         }
       ],
-      ["transform-decorators-legacy"]
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      ["@babel/plugin-proposal-class-properties", { "loose" : true }]
     ]
   }
 }
