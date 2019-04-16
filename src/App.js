@@ -1,27 +1,29 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import {addNum, removeNum,addNumAsync} from './index.redux'
-
+// import { connect } from 'react-redux';
+// import {addNum, removeNum,addNumAsync} from './index.redux';
+import {BrowserRouter, Switch, Route,Redirect} from 'react-router-dom';
+import Login from './login'
+import Home from './home'
 // const mapStateToProps = (state) => {
 //   return {
 //     prop: state
 //   }
 // }
 // const actionCreators = {addNum,removeNum,addNumAsync}
-@connect(
-  state=>({prop:state}),
-  {addNum,removeNum,addNumAsync}
-)
+// @connect(
+//   state=>({prop:state}),
+//   {addNum,removeNum,addNumAsync}
+// )
 class App extends Component {
     render() {
       return (
-        <div>
-          <p>Hello reducer action{this.props.prop}个；</p>
-          <button onClick={this.props.addNum}>加一个</button>&nbsp;&nbsp;
-          <button onClick={this.props.removeNum}>减一个</button>&nbsp;
-          <button onClick={this.props.addNumAsync}>两秒后再添加一个</button>
-        </div>
-        
+        <BrowserRouter>
+          <Switch>
+              <Route path='/login' component={Login}/>
+              <Route path='/home' component={Home}/>
+              <Redirect to='/home'/>
+          </Switch>
+        </BrowserRouter>
       );
     }
   }
